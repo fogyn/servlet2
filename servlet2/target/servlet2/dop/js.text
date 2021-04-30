@@ -1,0 +1,41 @@
+<c:forEach var="news" items="${nouteNews.listnews}" varStatus="i">
+        <div>
+
+
+            <div onclick="newsClick('t${i.index}')" style="background-color: aqua; height: 50px;">
+
+                <p>
+                    <c:out value="${i.index}"></c:out>    <c:out value="${news['title']}"></c:out>
+                </p>
+                <div id="t${i.index}" class="testclass" style="display: none;">
+                    <hr>
+                    <img src="<c:out value="${news['img1']}"/>">
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </c:forEach>
+
+
+//
+            <c:if test="${model==b.index}">
+
+                <div class="testclass" >
+                    <hr>
+
+                    <p align="justify" style="margin: auto; width: 500px;">
+
+                        <img src="<c:out value="${elem['img1']}"/>" alt="news${b.index}" align="left" vspace="10" hspace="10" >
+
+
+                        <c:out value="${elem['text']}"></c:out>
+                        <img src="<c:out value="${elem['img2']}"/>" alt="news${b.index}" align="right" vspace="10" hspace="10" >
+
+                        <img src="<c:out value="${elem['img3']}"/>" alt="news${b.index}" align="left" vspace="10" hspace="10"  >
+                    </p>
+                </div>
+            </c:if>
